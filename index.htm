@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Image</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100%;
+    background-image: url('your_image_url.jpg'); /* Replace 'your_image_url.jpg' with the URL of your image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+  }
+
+  /* Media query for smaller screens (e.g., mobile devices) */
+  @media screen and (max-width: 768px) {
+    .container {
+      background-size: contain; /* Adjust the background size for smaller screens */
+    }
+  }
+
+  /* Media query for larger screens (e.g., full screen) */
+  @media screen and (min-width: 1200px) {
+    .container {
+      background-size: cover; /* Adjust the background size for larger screens */
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Content goes here -->
+</div>
+
+</body>
+</html>

@@ -14,23 +14,16 @@
   .container {
     width: 100%;
     height: 100%;
-    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/Webp.net-resizeimage.jpg?raw=true'); /* Replace 'your_image_url.jpg' with the URL of your image */
-    background-size: cover; /* Cover the entire container */
+    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/Webp.net-resizeimage.jpg?raw=true'); /* URL of your image */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
+    background-size: cover; /* Default: Cover the entire container */
   }
 
-  /* Media query for smaller screens (e.g., mobile devices) */
+  /* Media query for smaller screens */
   @media screen and (max-width: 768px) {
     .container {
       background-size: contain; /* Adjust the background size for smaller screens */
-    }
-  }
-
-  /* Media query for larger screens (e.g., full screen) */
-  @media screen and (min-width: 1200px) {
-    .container {
-      background-size: cover; /* Adjust the background size for larger screens */
     }
   }
 </style>

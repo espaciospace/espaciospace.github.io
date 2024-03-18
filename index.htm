@@ -17,14 +17,7 @@
     background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/Webp.net-resizeimage.jpg?raw=true'); /* URL of your image */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
-    background-size: contain; /* Default: Contain the entire image */
-  }
-
-  /* Media query for larger screens */
-  @media screen and (min-width: 1024px) and (min-height: 768px) {
-    .container {
-      background-size: cover; /* Adjust the background size to cover the entire container in larger screens */
-    }
+    background-size: cover; /* Cover the entire container */
   }
 </style>
 </head>
@@ -34,6 +27,19 @@
   <!-- Content goes here -->
 </div>
 
+<script>
+  // Function to adjust background-size based on viewport height excluding browser UI elements
+  function adjustBackgroundSize() {
+    var vh = window.innerHeight; // Viewport height
+    document.querySelector('.container').style.backgroundSize = 'auto ' + vh + 'px';
+  }
+
+  // Call the function initially
+  adjustBackgroundSize();
+
+  // Call the function whenever the window is resized
+  window.addEventListener('resize', adjustBackgroundSize);
+</script>
+
 </body>
 </html>
-

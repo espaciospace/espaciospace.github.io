@@ -19,7 +19,7 @@
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
-    cursor: grab; /* Change cursor to grab */
+    cursor: move; /* Change cursor to move */
   }
 </style>
 </head>
@@ -30,38 +30,41 @@
 </div>
 
 <script>
-// Function to handle mouse dragging
-function handleMouseDown(e) {
-  if (e.button === 0) {
-    var startX = e.clientX;
-    var startY = e.clientY;
-    var container = document.querySelector('.container');
-    
-    // Function to handle mouse movement
-    function handleMouseMove(e) {
-      var offsetX = startX - e.clientX;
-      var offsetY = startY - e.clientY;
-      container.style.backgroundPositionX = (container.offsetLeft - offsetX) + 'px';
-      container.style.backgroundPositionY = (container.offsetTop - offsetY) + 'px';
-      startX = e.clientX;
-      startY = e.clientY;
-    }
-    
-    // Function to stop dragging
-    function handleMouseUp() {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
-      container.style.cursor = 'grab';
-    }
-    
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
-    container.style.cursor = 'grabbing';
+// Initialize variables to track mouse movement
+var isDragging = false;
+var startX, startY, initialOffsetX, initialOffsetY;
+
+// Function to handle mouse down event
+function handleMouseDown(event) {
+  event.preventDefault();
+  isDragging = true;
+  startX = event.clientX;
+  startY = event.clientY;
+  initialOffsetX = parseInt(window.getComputedStyle(document.querySelector('.container')).backgroundPositionX, 10) || 0;
+  initialOffsetY = parseInt(window.getComputedStyle(document.querySelector('.container')).backgroundPositionY, 10) || 0;
+}
+
+// Function to handle mouse move event
+function handleMouseMove(event) {
+  event.preventDefault();
+  if (isDragging) {
+    var offsetX = event.clientX - startX;
+    var offsetY = event.clientY - startY;
+    document.querySelector('.container').style.backgroundPositionX = (initialOffsetX + offsetX) + 'px';
+    document.querySelector('.container').style.backgroundPositionY = (initialOffsetY + offsetY) + 'px';
   }
 }
 
-// Attach mouse event listener to the container
+// Function to handle mouse up event
+function handleMouseUp(event) {
+  event.preventDefault();
+  isDragging = false;
+}
+
+// Attach event listeners
 document.querySelector('.container').addEventListener('mousedown', handleMouseDown);
+document.addEventListener('mousemove', handleMouseMove);
+document.addEventListener('mouseup', handleMouseUp);
 </script>
 
 </body>

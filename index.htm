@@ -34,74 +34,136 @@
     transform: scale(1.2); /* Scale up by 20% on hover */
   }
 
+  /* Tooltip container */
+  .tooltip {
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+    text-align: center;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Roboto', sans-serif; /* Specify the space-like font */
+  }
+
+  /* Tooltip arrow */
+  .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+
+  /* Show the tooltip on hover */
+  .additional-image:hover + .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Planet positions */
   .jupiter {
-    width: 250px; /* Jupiter width (adjusted to 250 pixels) */
-    left: 118px; /* Horizontal position (adjusted to 118 pixels, 35 pixels to the left) */
-    top: 760px; /* Vertical position (30 pixels up) */
+    width: 250px;
+    left: 118px;
+    top: 760px;
   }
 
   .earth {
-    width: 200px; /* Earth width */
-    left: 465px; /* Horizontal position (15 pixels to the right) */
-    top: 165px; /* Vertical position */
+    width: 200px;
+    left: 465px;
+    top: 165px;
   }
 
   .mars {
-    width: 125px; /* Mars width */
-    left: 360px; /* Horizontal position (Adjusted to 380 pixels, 20 pixels to the left) */
-    top: 566px; /* Vertical position (Adjusted to 566 pixels) */
+    width: 125px;
+    left: 360px;
+    top: 566px;
   }
 
   .mercury {
-    width: 100px; /* Mercury width */
-    left: 345px; /* Horizontal position (Adjusted to 360 pixels, 30 pixels to the left) */
-    top: 158px; /* Vertical position */
+    width: 100px;
+    left: 345px;
+    top: 158px;
   }
 
   .venus {
-    width: 125px; /* Venus width */
-    left: 177px; /* Horizontal position (Adjusted to 177 pixels, 20 pixels to the left) */
-    top: 434px; /* Vertical position (Adjusted to 434 pixels) */
+    width: 125px;
+    left: 177px;
+    top: 434px;
   }
 
   .saturn {
-    width: 235px; /* Saturn width */
-    left: 863px; /* Horizontal position (Adjusted to 843 pixels, 70 pixels left) */
-    top: 277px; /* Vertical position (Adjusted to 277 pixels, 30 pixels up) */
+    width: 235px;
+    left: 863px;
+    top: 277px;
   }
 
   .uranus {
-    width: 210px; /* Uranus width */
-    left: 865px; /* Horizontal position (Adjusted to 857 pixels, 20 pixels left) */
-    top: 660px; /* Vertical position (Adjusted to 648 pixels, 50 pixels down) */
+    width: 210px;
+    left: 865px;
+    top: 660px;
   }
 
   .neptune {
-    width: 125px; /* Neptune width (adjusted to 115 pixels) */
-    left: 1150px; /* Horizontal position (Adjusted to 1180 pixels, 10 pixels left) */
-    top: 394px; /* Vertical position */
+    width: 125px;
+    left: 1150px;
+    top: 394px;
   }
 
   .pluto {
-    width: 100px; /* Pluto width */
-    left: 939px; /* Horizontal position */
-    top: 1040px; /* Vertical position */
+    width: 100px;
+    left: 939px;
+    top: 1040px;
   }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Load the Roboto font -->
 </head>
 <body>
 
 <div class="container">
-  <!-- Content goes here -->
+  <!-- Jupiter -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Jupiter.png?raw=true" class="additional-image jupiter" alt="Jupiter Image">
+  <div class="tooltip" style="top: -20px; left: 50%;">Jupiter</div>
+
+  <!-- Earth -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Earth.png?raw=true" class="additional-image earth" alt="Earth Image">
+  <div class="tooltip" style="top: -20px; left: 50%;">Earth</div>
+
+  <!-- Mars -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Mars.png?raw=true" class="additional-image mars" alt="Mars Image">
+  <div class="tooltip" style="top: -20px; left: 50%;">Mars</div>
+
+  <!-- Mercury -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Mercury.png?raw=true" class="additional-image mercury" alt="Mercury Image">
+  <div class="tooltip" style="top: -20px; left: 50%;">Mercury</div>
+
+  <!-- Venus -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Venus.png?raw=true" class="additional-image venus" alt="Venus Image">
+  <div class="tooltip" style="top: -20px; left: 50%;">Venus</div>
+
+  <!-- Saturn -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Saturn.png?raw=true" class="additional-image saturn" alt="Saturn Image">
+  <div class="tooltip" style="top: -20px; left: 50%;">Saturn</div>
+
+  <!-- Uranus -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Uranus.png?raw=true" class="additional-image uranus" alt="Uranus Image">
+  <div class="tooltip" style="top: -20px; left: 50%;">Uranus</div>
+
+  <!-- Neptune -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Neptune.png?raw=true" class="additional-image neptune" alt="Neptune Image">
+  <div class="tooltip" style="top: -20px; left: 50%;">Neptune</div>
+
+  <!-- Pluto -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Pluto.png?raw=true" class="additional-image pluto" alt="Pluto Image">
+  <div class="tooltip" style="top: -20px; left: 50%;">Pluto</div>
 </div>
 
 </body>

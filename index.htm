@@ -37,7 +37,7 @@
   /* Tooltip container */
   .tooltip {
     position: absolute;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
     color: white;
     padding: 5px;
     border-radius: 5px;
@@ -45,9 +45,6 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease;
     text-align: center;
-    top: 0; /* Show tooltip above the planet */
-    left: 50%;
-    transform: translateX(-50%);
     font-family: 'Roboto', sans-serif; /* Specify the space-like font */
   }
 
@@ -60,13 +57,16 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: black transparent transparent transparent;
+    border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent;
   }
 
   /* Show the tooltip on hover */
   .additional-image:hover + .tooltip {
     visibility: visible;
     opacity: 1;
+    top: calc(100% + 10px); /* Position the tooltip just below the planet */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%);
   }
 
   /* Planet positions */
@@ -131,39 +131,39 @@
 <div class="container">
   <!-- Jupiter -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Jupiter.png?raw=true" class="additional-image jupiter" alt="Jupiter Image">
-  <div class="tooltip" style="left: 50%;">Jupiter</div>
+  <div class="tooltip">Jupiter</div>
 
   <!-- Earth -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Earth.png?raw=true" class="additional-image earth" alt="Earth Image">
-  <div class="tooltip" style="left: 50%;">Earth</div>
+  <div class="tooltip">Earth</div>
 
   <!-- Mars -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Mars.png?raw=true" class="additional-image mars" alt="Mars Image">
-  <div class="tooltip" style="left: 50%;">Mars</div>
+  <div class="tooltip">Mars</div>
 
   <!-- Mercury -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Mercury.png?raw=true" class="additional-image mercury" alt="Mercury Image">
-  <div class="tooltip" style="left: 50%;">Mercury</div>
+  <div class="tooltip">Mercury</div>
 
   <!-- Venus -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Venus.png?raw=true" class="additional-image venus" alt="Venus Image">
-  <div class="tooltip" style="left: 50%;">Venus</div>
+  <div class="tooltip">Venus</div>
 
   <!-- Saturn -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Saturn.png?raw=true" class="additional-image saturn" alt="Saturn Image">
-  <div class="tooltip" style="left: 50%;">Saturn</div>
+  <div class="tooltip">Saturn</div>
 
   <!-- Uranus -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Uranus.png?raw=true" class="additional-image uranus" alt="Uranus Image">
-  <div class="tooltip" style="left: 50%;">Uranus</div>
+  <div class="tooltip">Uranus</div>
 
   <!-- Neptune -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Neptune.png?raw=true" class="additional-image neptune" alt="Neptune Image">
-  <div class="tooltip" style="left: 50%;">Neptune</div>
+  <div class="tooltip">Neptune</div>
 
   <!-- Pluto -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Pluto.png?raw=true" class="additional-image pluto" alt="Pluto Image">
-  <div class="tooltip" style="left: 50%;">Pluto</div>
+  <div class="tooltip">Pluto</div>
 </div>
 
 </body>

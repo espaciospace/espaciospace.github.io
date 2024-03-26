@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Espacio</title>
+<title>Espaciospace</title>
 <style>
   body {
     margin: 0;
@@ -14,13 +14,22 @@
   }
   
   .container {
-    width: 1920px; /* Width of the image */
-    height: 1280px; /* Height of the image */
-    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/3398655-aj.png?raw=true');
+    width: 1920px; /* Width of the container */
+    height: 1280px; /* Height of the container */
+    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/Webp.net-resizeimage.jpg?raw=true');
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
+    position: relative; /* Set position to relative for absolute positioning of child elements */
     overflow-y: auto; /* Enable vertical scrollbar */
+  }
+  
+  .additional-image {
+    position: absolute; /* Position the image absolutely within the container */
+    left: 252px; /* Horizontal position */
+    top: 1194px; /* Vertical position */
+    width: 100px; /* Width of the image */
+    height: auto; /* Maintain aspect ratio */
   }
 </style>
 </head>
@@ -28,6 +37,7 @@
 
 <div class="container">
   <!-- Content goes here -->
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Jupiter.png?raw=true" class="additional-image" alt="Additional Image">
 </div>
 
 </body>

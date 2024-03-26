@@ -26,9 +26,6 @@
   
   .additional-image {
     position: absolute; /* Position the image absolutely within the container */
-    left: 153px; /* Horizontal position */
-    top: 765px; /* Vertical position */
-    width: 250px; /* Initial width */
     height: auto; /* Maintain aspect ratio */
     transition: transform 0.3s ease; /* Smooth transition for transform property */
   }
@@ -36,13 +33,26 @@
   .additional-image:hover {
     transform: scale(1.2); /* Scale up by 20% on hover */
   }
+
+  .jupiter {
+    width: 250px; /* Jupiter width */
+    left: 153px; /* Horizontal position */
+    top: 765px; /* Vertical position */
+  }
+
+  .earth {
+    width: 200px; /* Earth width */
+    left: 550px; /* Horizontal position */
+    top: 165px; /* Vertical position */
+  }
 </style>
 </head>
 <body>
 
 <div class="container">
   <!-- Content goes here -->
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Jupiter.png?raw=true" class="additional-image" alt="Jupiter Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Jupiter.png?raw=true" class="additional-image jupiter" alt="Jupiter Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Earth.png?raw=true" class="additional-image earth" alt="Earth Image">
 </div>
 
 </body>

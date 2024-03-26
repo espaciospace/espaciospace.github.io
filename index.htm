@@ -28,11 +28,13 @@
     position: absolute; /* Position the image absolutely within the container */
     left: 153px; /* Horizontal position */
     top: 765px; /* Vertical position */
-    transition: width 0.3s ease; /* Smooth transition for width change */
+    width: 150px; /* Original width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition for transform property */
   }
 
   .additional-image:hover {
-    width: calc(100% + 20px); /* Extend width by 20 pixels on hover */
+    transform: scale(1.2); /* Scale up by 20% on hover */
   }
 </style>
 </head>
@@ -45,4 +47,3 @@
 
 </body>
 </html>
-

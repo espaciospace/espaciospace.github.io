@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Background Image</title>
+<title>Background Image from GitHub Repository</title>
 <style>
-  body, html {
+  body {
     margin: 0;
     padding: 0;
     height: 100%;
+    background: #f0f0f0; /* Fallback color if the image is unavailable */
   }
   
   .container {
-    width: 100%;
-    height: 100%;
-    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/Webp.net-resizeimage.jpg?raw=true'); /* URL of your image */
+    width: 1920px; /* Width of the image */
+    height: 1080px; /* Height of the image */
+    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/3398655-aj.png?raw=true');
+    background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
-    background-size: cover; /* Cover the entire container */
   }
 </style>
 </head>
@@ -26,20 +27,6 @@
 <div class="container">
   <!-- Content goes here -->
 </div>
-
-<script>
-  // Function to adjust background-size based on viewport height excluding browser UI elements
-  function adjustBackgroundSize() {
-    var vh = window.innerHeight; // Viewport height
-    document.querySelector('.container').style.backgroundSize = 'auto ' + vh + 'px';
-  }
-
-  // Call the function initially
-  adjustBackgroundSize();
-
-  // Call the function whenever the window is resized
-  window.addEventListener('resize', adjustBackgroundSize);
-</script>
 
 </body>
 </html>

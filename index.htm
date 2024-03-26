@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Background Image from GitHub Repository</title>
+<title>Espacio</title>
 <style>
   body {
     margin: 0;
@@ -15,11 +15,12 @@
   .container {
     width: 1920px; /* Width of the image */
     height: 1080px; /* Height of the image */
-    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/3398655-aj.png?raw=true');
+    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/Webp.net-resizeimage.jpg?raw=true');
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
     cursor: move; /* Change cursor to move */
+    overflow: hidden; /* Hide content that goes beyond container bounds */
   }
 </style>
 </head>
@@ -50,8 +51,15 @@ function handleMouseMove(event) {
   if (isDragging) {
     var offsetX = event.clientX - startX;
     var offsetY = event.clientY - startY;
-    document.querySelector('.container').style.backgroundPositionX = (initialOffsetX + offsetX) + 'px';
-    document.querySelector('.container').style.backgroundPositionY = (initialOffsetY + offsetY) + 'px';
+    var container = document.querySelector('.container');
+    var maxX = container.offsetWidth - container.scrollWidth;
+    var maxY = container.offsetHeight - container.scrollHeight;
+    var newOffsetX = initialOffsetX + offsetX;
+    var newOffsetY = initialOffsetY + offsetY;
+    newOffsetX = Math.min(0, Math.max(maxX, newOffsetX));
+    newOffsetY = Math.min(0, Math.max(maxY, newOffsetY));
+    container.style.backgroundPositionX = newOffsetX + 'px';
+    container.style.backgroundPositionY = newOffsetY + 'px';
   }
 }
 

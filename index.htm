@@ -98,62 +98,55 @@
     transform: scale(1.18); /* Scale 1.18 times */
   }
 
-  /* Add styles for planet names */
   .planet-name {
-    position: absolute;
-    font-size: 16px;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* Add text shadow for better visibility */
-    opacity: 0; /* Initially hide the planet names */
-    transition: opacity 0.3s ease;
-  }
+  position: absolute;
+  font-size: 16px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* Add text shadow for better visibility */
+  opacity: 0; /* Initially hide the planet names */
+  transition: opacity 0.3s ease;
+  text-align: center; /* Center the text */
+  width: 100%; /* Set width to 100% to center the text */
+  left: 0; /* Center the text */
+  transform: translateX(-50%); /* Center the text */
+}
 
-  /* Add styles for each planet */
-  .jupiter-name {
-    left: 118px;
-    top: 740px;
-  }
+/* Add styles for each planet */
+.jupiter-name {
+  top: 740px;
+}
 
-  .earth-name {
-    left: 465px;
-    top: 145px;
-  }
+.earth-name {
+  top: 145px;
+}
 
-  .mars-name {
-    left: 360px;
-    top: 546px;
-  }
+.mars-name {
+  top: 546px;
+}
 
-  .mercury-name {
-    left: 315px;
-    top: 138px;
-  }
+.mercury-name {
+  top: 138px;
+}
 
-  .venus-name {
-    left: 157px;
-    top: 414px;
-  }
+.venus-name {
+  top: 414px;
+}
 
-  .saturn-name {
-    left: 843px;
-    top: 247px;
-  }
+.saturn-name {
+  top: 247px;
+}
 
-  .uranus-name {
-    left: 845px;
-    top: 630px;
-  }
+.uranus-name {
+  top: 630px;
+}
 
-  .neptune-name {
-    left: 1130px;
-    top: 364px;
-  }
+.neptune-name {
+  top: 364px;
+}
 
-  .pluto-name {
-    left: 919px;
-    top: 1020px;
-  }
-
+.pluto-name {
+  top: 1020px;
+}
   /* Show planet names on hover */
   .additional-image:hover + .planet-name {
     opacity: 1;

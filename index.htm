@@ -99,8 +99,15 @@
     transform: scale(1.18); /* Scale 1.18 times */
   }
 
-  /* Add styles for planet names */
-  .planet-name {
+  @font-face {
+  font-family: 'DekmantelBB-Blur';
+  src: url('DekmantelBB-Blur.woff2') format('woff2'), /* WOFF2 format */
+       url('DekmantelBB-Blur.woff') format('woff'); /* WOFF format */
+}
+
+/* Add styles for planet names */
+.planet-name {
+  font-family: 'DekmantelBB-Blur', sans-serif; /* Apply custom font */
   position: absolute;
   font-size: 25px;
   color: white;
@@ -112,8 +119,9 @@
   left: 50%; /* Start from center */
   transform: translateX(-50%); /* Center the text */
   top: 20px; /* 20px above the image */
-  font: 
 }
+
+/* Add rest of the styles */
 
 /* Add styles for each planet */
 .jupiter-name {

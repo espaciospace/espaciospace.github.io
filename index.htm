@@ -121,8 +121,6 @@
   top: 20px; /* 20px above the image */
 }
 
-/* Add rest of the styles */
-
 /* Add styles for each planet */
 .jupiter-name {
   left: 242px;
@@ -180,33 +178,45 @@
 <div class="container">
   <!-- Content goes here -->
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Espacio.png?raw=true" class="title" alt="Title Image">
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Jupiter.png?raw=true" class="additional-image jupiter" alt="Jupiter Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Jupiter.png?raw=true" class="additional-image jupiter" alt="Jupiter Image" onclick="redirectToURL('Jupiter')">
   <div class="planet-name jupiter-name">Jupiter</div>
   
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Earth.png?raw=true" class="additional-image earth" alt="Earth Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Earth.png?raw=true" class="additional-image earth" alt="Earth Image" onclick="redirectToURL('Earth')">
   <div class="planet-name earth-name">Earth</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Mars.png?raw=true" class="additional-image mars" alt="Mars Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Mars.png?raw=true" class="additional-image mars" alt="Mars Image" onclick="redirectToURL('Mars')">
   <div class="planet-name mars-name">Mars</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Mercury.png?raw=true" class="additional-image mercury" alt="Mercury Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Mercury.png?raw=true" class="additional-image mercury" alt="Mercury Image" onclick="redirectToURL('Mercury')">
   <div class="planet-name mercury-name">Mercury</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Venus.png?raw=true" class="additional-image venus" alt="Venus Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Venus.png?raw=true" class="additional-image venus" alt="Venus Image" onclick="redirectToURL('Venus')">
   <div class="planet-name venus-name">Venus</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Saturn.png?raw=true" class="additional-image saturn" alt="Saturn Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Saturn.png?raw=true" class="additional-image saturn" alt="Saturn Image" onclick="redirectToURL('Saturn')">
   <div class="planet-name saturn-name">Saturn</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Uranus.png?raw=true" class="additional-image uranus" alt="Uranus Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Uranus.png?raw=true" class="additional-image uranus" alt="Uranus Image" onclick="redirectToURL('Uranus')">
   <div class="planet-name uranus-name">Uranus</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Neptune.png?raw=true" class="additional-image neptune" alt="Neptune Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Neptune.png?raw=true" class="additional-image neptune" alt="Neptune Image" onclick="redirectToURL('Neptune')">
   <div class="planet-name neptune-name">Neptune</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Pluto.png?raw=true" class="additional-image pluto" alt="Pluto Image">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Pluto.png?raw=true" class="additional-image pluto" alt="Pluto Image" onclick="redirectToURL('Pluto')">
   <div class="planet-name pluto-name">Pluto</div>
 </div>
 
+<script>
+  function redirectToURL(planet) {
+    window.location.href = "https://espaciospace.github.io/" + planet;
+  }
+
+  // Redirect to /home when the page loads
+  window.onload = function() {
+    if (window.location.pathname === "/") {
+      window.location.href = "https://espaciospace.github.io/home";
+    }
+  };
+</script>
 </body>
 </html>

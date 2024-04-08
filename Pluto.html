@@ -26,40 +26,29 @@
     width: 100vw; /* Width of the container */
     height: 100vh; /* Height of the container */
     animation: fadeInBackground 3s forwards; /* Fade-in animation */
-    background-image: url('https://raw.githubusercontent.com/espaciospace/espaciospace.github.io/main/STARS.png'); /* Background image */
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-image: url('https://raw.githubusercontent.com/espaciospace/espaciospace.github.io/main/STARS.png'), url('https://github.com/espaciospace/espaciospace.github.io/blob/main/Pluto.png?raw=true'); /* Background images */
+    background-size: cover, auto; /* Cover the entire container for the first image, auto for the second image */
+    background-position: center, center; /* Center the background images */
+    background-repeat: no-repeat, no-repeat; /* Do not repeat the background images */
     position: relative; /* Set position to relative for absolute positioning of child elements */
     overflow-y: auto; /* Enable vertical scrollbar */
     overflow-x: hidden;
   }
-  .first-image {
-    background-image: url('https://raw.githubusercontent.com/espaciospace/espaciospace.github.io/main/Background1.png?raw=true');
-    width: 80vw; /* Width of the image container */
-    height: 80vh; /* Height of the image container */
-    position: absolute; /* Position the image container absolutely */
-    top: 50%; /* Align to the vertical center */
-    left: 50%; /* Align to the horizontal center */
-    transform: translate(-50%, -50%); /* Center the image container */
-    background-size: cover; /* Cover the entire image container */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-  }
-  .second-image {
+  
+  .pluto-image {
+    width: 200%; /* Scale the image by 2 */
     position: absolute; /* Position the image absolutely */
-    top: 15vh; /* Align to 15% from the top */
-    left: 50%; /* Align to the horizontal center */
-    transform: translateX(-50%); /* Center the image horizontally */
-    width: 20vw; /* Width of the image */
-    height: 50vh; /* Height of the image */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the image */
   }
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="first-image"></div>
-    <img class="second-image" src="https://github.com/espaciospace/espaciospace.github.io/blob/main/viber_image_2024-04-08_21-58-00-790.jpg?raw=true" alt="Second Image">
-  </div>
+
+<div class="container">
+  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Pluto.png?raw=true" alt="Pluto" class="pluto-image">
+</div>
+
 </body>
 </html>

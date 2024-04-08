@@ -8,8 +8,18 @@
     body {
         margin: 0;
         padding: 0;
-        background-color: rgb(255, 255, 255);
-        animation: fadeIn 3s forwards; /* Animation that fades in the black screen */
+        background-color: rgb(255, 255, 255); /* Set initial background color to white */
+        overflow: hidden; /* Hide overflowing content */
+    }
+
+    .black-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black; /* Set overlay color to black */
+        animation: fadeIn 3s forwards; /* Animation that fades in the black overlay */
     }
 
     @keyframes fadeIn {
@@ -23,6 +33,7 @@
 </style>
 </head>
 <body>
+    <div class="black-overlay"></div>
     <!-- Content can be added here -->
 </body>
 </html>

@@ -221,6 +221,26 @@
   </a>
 </div>
 <script>
+  // Function to handle navigation to Pluto
+  function navigateToPluto() {
+    // Fade out the body
+    document.body.style.opacity = '0';
+    // Wait for 3 seconds before navigating
+    setTimeout(function() {
+      // Navigate to the new domain
+      window.location.href = "Pluto.html";
+    }, 3000);
+  }
+
+  // Add event listener to Pluto link
+  document.querySelector('.pluto-link').addEventListener('click', function(event) {
+    // Prevent default link behavior
+    event.preventDefault();
+    // Call function to navigate to Pluto
+    navigateToPluto();
+  });
+</script>
+<script>
   // Store the scroll position in sessionStorage when the page is unloaded
   window.addEventListener('beforeunload', function() {
     sessionStorage.setItem('scrollPosition', window.scrollY);

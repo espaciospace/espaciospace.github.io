@@ -6,48 +6,37 @@
 <title>Fade In Black Screen with Background Image</title>
 <style>
     body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden; /* Hide overflowing content */
-    }
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    background: black; /* Set initial background color to black */
+    animation: fadeInBackground 3s forwards; /* Fade-in animation */
+  }
 
-    .background-image {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/STARS.png?raw=true'); /* Background image URL */
-        background-size: cover; /* Cover the entire viewport */
-        background-position: center; /* Center the background image */
-        opacity: 0; /* Set initial opacity to 0 */
-        animation: fadeIn 3s forwards; /* Animation that fades in the background image */
+  @keyframes fadeInBackground {
+    from {
+      opacity: 0;
     }
+    to {
+      opacity: 1;
+    }
+  }
 
-    .black-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black; /* Set overlay color to black */
-        opacity: 0; /* Set initial opacity to 0 */
-        animation: fadeIn 3s forwards; /* Animation that fades in the black overlay */
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 1; /* Start with opacity 0 */
-        }
-        to {
-            opacity: 0; /* End with opacity 1 */
-        }
-    }
+  .container {
+    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/STARS.png?raw=true');
+    width: 1920px; /* Width of the container */
+    height: 1280px; /* Height of the container */
+    
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    position: relative; /* Set position to relative for absolute positioning of child elements */
+    overflow-y: auto; /* Enable vertical scrollbar */
+    overflow-x: hidden;
+  }
 </style>
 </head>
 <body>
-    <div class="background-image"></div>
-    <div class="black-overlay"></div>
-    <!-- Content can be added here -->
 </body>
 </html>

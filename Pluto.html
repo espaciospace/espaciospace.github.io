@@ -23,7 +23,6 @@
   }
   
   .container {
-    background-image: url('https://raw.githubusercontent.com/espaciospace/espaciospace.github.io/main/STARS.png');
     width: 100vw; /* Width of the container */
     height: 100vh; /* Height of the container */
     animation: fadeInBackground 3s forwards; /* Fade-in animation */
@@ -34,9 +33,24 @@
     overflow-y: auto; /* Enable vertical scrollbar */
     overflow-x: hidden;
   }
+
+  .image-container {
+    background-image: url('https://raw.githubusercontent.com/espaciospace/espaciospace.github.io/main/Background1.png?raw=true');
+    width: 70vw; /* Width of the image container */
+    height: 70vh; /* Height of the image container */
+    position: absolute; /* Position the image container absolutely */
+    top: 50%; /* Align to the vertical center */
+    left: 50%; /* Align to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the image container */
+    background-size: cover; /* Cover the entire image container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+  }
 </style>
 </head>
 <body>
-  <div class="container"></div>
+  <div class="container">
+    <div class="image-container"></div>
+  </div>
 </body>
 </html>

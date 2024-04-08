@@ -9,9 +9,9 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-    background: black; /* Set initial background color to black */
-    animation: fadeInBackground 3s forwards; /* Fade-in animation */
+    overflow-x: hidden;
+    background: black;
+    animation: fadeInBackground 3s forwards;
   }
 
   @keyframes fadeInBackground {
@@ -24,221 +24,109 @@
   }
   
   .container {
-    width: 100vw;
-    height: 100vh;
-    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/3398655-aj.png?raw=true');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
-}
+  }
   
   .additional-image {
-  position: absolute; /* Position the image absolutely within the container */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease; /* Smooth transition for transform property */
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* White glow with 0.4 transparency */
-}
+    position: absolute;
+    height: auto;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 2vw rgba(255, 255, 255, 0.4);
+  }
 
-.additional-image:hover {
-  transform: scale(1.2); /* Scale up by 20% on hover */
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.6); /* Increase glow on hover */
-}
-.additional-image.jupiter {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  width: 250px;
-  left: 118px;
-  top: 760px;
-}
+  .additional-image:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 4vw rgba(255, 255, 255, 0.6);
+  }
 
-.additional-image.earth {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  width: 200px;
-  left: 465px;
-  top: 165px;
-}
+  .jupiter {
+    width: 13%; /* Adjusted percentage */
+    left: 6%; /* Adjusted percentage */
+    top: 59%; /* Adjusted percentage */
+  }
 
-.additional-image.mars {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  width: 125px;
-  left: 360px;
-  top: 566px;
-}
+  .earth {
+    width: 10%; /* Adjusted percentage */
+    left: 24%; /* Adjusted percentage */
+    top: 13%; /* Adjusted percentage */
+  }
 
-.additional-image.mercury {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  width: 100px;
-  left: 345px;
-  top: 158px;
-}
+  .mars {
+    width: 6.5%; /* Adjusted percentage */
+    left: 19%; /* Adjusted percentage */
+    top: 44%; /* Adjusted percentage */
+  }
 
-.additional-image.venus {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  width: 125px;
-  left: 177px;
-  top: 434px;
-}
+  .mercury {
+    width: 5%; /* Adjusted percentage */
+    left: 18%; /* Adjusted percentage */
+    top: 12%; /* Adjusted percentage */
+  }
 
-.additional-image.saturn {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  width: 235px;
-  left: 863px;
-  top: 277px;
-}
+  .venus {
+    width: 6.5%; /* Adjusted percentage */
+    left: 9%; /* Adjusted percentage */
+    top: 34%; /* Adjusted percentage */
+  }
 
-.additional-image.uranus {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  width: 210px;
-  left: 865px;
-  top: 660px;
-}
+  .saturn {
+    width: 12%; /* Adjusted percentage */
+    left: 45%; /* Adjusted percentage */
+    top: 22%; /* Adjusted percentage */
+  }
 
-.additional-image.neptune {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  width: 125px;
-  left: 1150px;
-  top: 394px;
-}
+  .uranus {
+    width: 10.5%; /* Adjusted percentage */
+    left: 45%; /* Adjusted percentage */
+    top: 55%; /* Adjusted percentage */
+  }
 
-.additional-image.pluto {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  width: 100px;
-  left: 939px;
-  top: 1040px;
-}
-.jupiter {
-  width: 250px;
-  left: 6.14%; /* Adjusted to a percentage */
-  top: 59.38vh; /* Adjusted to a viewport unit (vh) */
-}
+  .neptune {
+    width: 6.5%; /* Adjusted percentage */
+    left: 61%; /* Adjusted percentage */
+    top: 31%; /* Adjusted percentage */
+  }
 
-.earth {
-  width: 200px;
-  left: 24.22%; /* Adjusted to a percentage */
-  top: 12.89vh; /* Adjusted to a viewport unit (vh) */
-}
+  .pluto {
+    width: 5%; /* Adjusted percentage */
+    left: 49%; /* Adjusted percentage */
+    top: 82%; /* Adjusted percentage */
+  }
 
-.mars {
-  width: 125px;
-  left: 18.75%; /* Adjusted to a percentage */
-  top: 44.22vh; /* Adjusted to a viewport unit (vh) */
-}
-
-.mercury {
-  width: 100px;
-  left: 17.97%; /* Adjusted to a percentage */
-  top: 12.34vh; /* Adjusted to a viewport unit (vh) */
-}
-
-.venus {
-  width: 125px;
-  left: 9.28%; /* Adjusted to a percentage */
-  top: 30.15vh; /* Adjusted to a viewport unit (vh) */
-}
-
-.saturn {
-  width: 235px;
-  left: 45.05%; /* Adjusted to a percentage */
-  top: 19.53vh; /* Adjusted to a viewport unit (vh) */
-}
-
-.uranus {
-  width: 210px;
-  left: 45.31%; /* Adjusted to a percentage */
-  top: 49.22vh; /* Adjusted to a viewport unit (vh) */
-}
-
-.neptune {
-  width: 125px;
-  left: 59.86%; /* Adjusted to a percentage */
-  top: 27.97vh; /* Adjusted to a viewport unit (vh) */
-}
-
-.pluto {
-  width: 100px;
-  left: 49.22%; /* Adjusted to a percentage */
-  top: 76.56vh; /* Adjusted to a viewport unit (vh) */
-}
   /* Style for the title */
   .title {
-  position: absolute;
-  top: 2vh; /* Adjusted to a viewport unit (vh) */
-  right: 2vw; /* Adjusted to a viewport unit (vw) */
-  width: auto;
-  height: auto;
-  transform: scale(1.18);
-}
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    width: auto;
+    height: auto;
+    transform: scale(1.18);
+  }
 
   @font-face {
   font-family: 'NeonFuture20Demo-L3jp3';
-  src: url('NeonFuture20Demo-L3jp3.woff2') format('woff2'), /* WOFF2 format */
-       url('NeonFuture20Demo-L3jp3.woff') format('woff'); /* WOFF format */
+  src: url('NeonFuture20Demo-L3jp3.woff2') format('woff2'),
+       url('NeonFuture20Demo-L3jp3.woff') format('woff');
 }
 
 /* Add styles for planet names */
 .planet-name {
-  font-family: 'NeonFuture20Demo-L3jp3', sans-serif; /* Apply custom font */
+  font-family: 'NeonFuture20Demo-L3jp3', sans-serif;
   position: absolute;
-  font-size: 25px;
+  font-size: 2.5vw; /* Adjusted font size */
   color: white;
-  text-shadow: 1px 1px 2px rgba(9, 117, 240, 0.8); /* Add text shadow for better visibility */
-  opacity: 0; /* Initially hide the planet names */
+  text-shadow: 0.5vw 0.5vw 1vw rgba(9, 117, 240, 0.8);
+  opacity: 0;
   transition: opacity 0.3s ease;
-  text-align: center; /* Center the text */
-  width: 100%; /* Set width to 100% to center the text */
-  left: 50%; /* Start from center */
-  transform: translateX(-50%); /* Center the text */
-  top: 20px; /* 20px above the image */
-}
-
-/* Add rest of the styles */
-
-/* Add styles for each planet */
-.jupiter-name {
-  left: 242px;
-  top: 720px;
-}
-
-.earth-name {
-  left: 562px;
-  top: 125px;
-}
-
-.mars-name {
-  left: 422px;
-  top: 526px;
-}
-
-.mercury-name {
-  left: 391px;
-  top: 118px;
-}
-
-.venus-name {
-  left: 236px;
-  top: 394px;
-}
-
-.saturn-name {
-  left: 987px;
-  top: 227px;
-}
-
-.uranus-name {
-  left: 970px;
-  top: 610px;
-}
-
-.neptune-name {
-  left: 1215px;
-  top: 344px;
-}
-
-.pluto-name {
-  left: 987px;
-  top: 1000px;
+  text-align: center;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2vw; /* Adjusted top position */
 }
 
 /* Show planet names on hover */

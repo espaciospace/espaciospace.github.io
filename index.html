@@ -36,6 +36,7 @@
     overflow-x: auto;
   }
   
+  
   .additional-image {
   position: absolute; /* Position the image absolutely within the container */
   height: auto; /* Maintain aspect ratio */
@@ -219,6 +220,22 @@
     <div class="planet-name pluto-name">Pluto</div>
   </a>
 </div>
+<script>
+  // Store the scroll position in sessionStorage when the page is unloaded
+  window.addEventListener('beforeunload', function() {
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+  });
+
+  // Restore the scroll position when the page is loaded
+  window.addEventListener('load', function() {
+    var scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition !== null) {
+      window.scrollTo(0, scrollPosition);
+      // Clear the stored scroll position
+      sessionStorage.removeItem('scrollPosition');
+    }
+  });
+</script>
 
 </body>
 </html>

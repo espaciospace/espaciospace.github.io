@@ -8,7 +8,7 @@
   body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh; /* Set body height to viewport height */
     overflow-x: hidden; /* Hide horizontal scrollbar */
     background: black; /* Set initial background color to black */
     animation: fadeInBackground 3s forwards; /* Fade-in animation */
@@ -48,64 +48,64 @@
   }
 
   .jupiter {
-    width: 15%; /* Jupiter width */
-    left: 6%; /* Horizontal position */
-    top: 45%; /* Vertical position */
+    width: 250px; /* Jupiter width */
+    left: 118px; /* Horizontal position */
+    top: 760px; /* Vertical position */
   }
 
   .earth {
-    width: 12%; /* Earth width */
-    left: 24%; /* Horizontal position */
-    top: 13%; /* Vertical position */
+    width: 200px; /* Earth width */
+    left: 465px; /* Horizontal position */
+    top: 165px; /* Vertical position */
   }
 
   .mars {
-    width: 7.5%; /* Mars width */
-    left: 19%; /* Horizontal position */
-    top: 35%; /* Vertical position */
+    width: 125px; /* Mars width */
+    left: 360px; /* Horizontal position */
+    top: 566px; /* Vertical position */
   }
 
   .mercury {
-    width: 6%; /* Mercury width */
-    left: 18%; /* Horizontal position */
-    top: 12%; /* Vertical position */
+    width: 100px; /* Mercury width */
+    left: 345px; /* Horizontal position */
+    top: 158px; /* Vertical position */
   }
 
   .venus {
-    width: 7.5%; /* Venus width */
-    left: 9%; /* Horizontal position */
-    top: 27%; /* Vertical position */
+    width: 125px; /* Venus width */
+    left: 177px; /* Horizontal position */
+    top: 434px; /* Vertical position */
   }
 
   .saturn {
-    width: 13%; /* Saturn width */
-    left: 45%; /* Horizontal position */
-    top: 18%; /* Vertical position */
+    width: 235px; /* Saturn width */
+    left: 863px; /* Horizontal position */
+    top: 277px; /* Vertical position */
   }
 
   .uranus {
-    width: 11.5%; /* Uranus width */
-    left: 45%; /* Horizontal position */
-    top: 48%; /* Vertical position */
+    width: 210px; /* Uranus width */
+    left: 865px; /* Horizontal position */
+    top: 660px; /* Vertical position */
   }
 
   .neptune {
-    width: 7.5%; /* Neptune width */
-    left: 60%; /* Horizontal position */
-    top: 31%; /* Vertical position */
+    width: 125px; /* Neptune width */
+    left: 1150px; /* Horizontal position */
+    top: 394px; /* Vertical position */
   }
 
   .pluto {
-    width: 6%; /* Pluto width */
-    left: 49%; /* Horizontal position */
-    top: 80%; /* Vertical position */
+    width: 100px; /* Pluto width */
+    left: 939px; /* Horizontal position */
+    top: 1040px; /* Vertical position */
   }
 
   /* Style for the title */
   .title {
     position: absolute;
-    top: 3%; /* Vertical position */
-    right: 5%; /* Horizontal position */
+    top: 30px; /* Vertical position */
+    right: 50px; /* Horizontal position */
     width: auto; /* Adjust as needed */
     height: auto; /* Adjust as needed */
     transform: scale(1.18); /* Scale 1.18 times */
@@ -121,7 +121,7 @@
   .planet-name {
     font-family: 'NeonFuture20Demo-L3jp3', sans-serif; /* Apply custom font */
     position: absolute;
-    font-size: 1.5vw; /* Responsive font size */
+    font-size: 25px;
     color: white;
     text-shadow: 1px 1px 2px rgba(9, 117, 240, 0.8); /* Add text shadow for better visibility */
     opacity: 0; /* Initially hide the planet names */
@@ -130,53 +130,55 @@
     width: 100%; /* Set width to 100% to center the text */
     left: 50%; /* Start from center */
     transform: translateX(-50%); /* Center the text */
-    top: 1%; /* Vertical position */
+    top: 20px; /* 20px above the image */
   }
+
+  /* Add rest of the styles */
 
   /* Add styles for each planet name */
   .jupiter-name {
-    left: 12%;
-    top: 42%;
+    left: 242px;
+    top: 720px;
   }
 
   .earth-name {
-    left: 27%;
-    top: 10%;
+    left: 562px;
+    top: 125px;
   }
 
   .mars-name {
-    left: 23%;
-    top: 33%;
+    left: 422px;
+    top: 526px;
   }
 
   .mercury-name {
-    left: 20%;
-    top: 8%;
+    left: 391px;
+    top: 118px;
   }
 
   .venus-name {
-    left: 11%;
-    top: 25%;
+    left: 236px;
+    top: 394px;
   }
 
   .saturn-name {
-    left: 45%;
-    top: 15%;
+    left: 987px;
+    top: 227px;
   }
 
   .uranus-name {
-    left: 46%;
-    top: 45%;
+    left: 970px;
+    top: 610px;
   }
 
   .neptune-name {
-    left: 62%;
-    top: 28%;
+    left: 1215px;
+    top: 344px;
   }
 
   .pluto-name {
-    left: 50%;
-    top: 78%;
+    left: 987px;
+    top: 1000px;
   }
 
   /* Show planet names on hover */

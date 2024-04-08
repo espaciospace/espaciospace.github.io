@@ -35,18 +35,16 @@
     overflow-x: hidden;
   }
   .first-image {
-    width: 80vw; /* Width of the image */
-    height: 80vh; /* Height of the image */
-    position: absolute; /* Position the image absolutely */
-    top: 25%; /* Align to the top */
-    left: 25%; /* Align to the left */
-    background-image: url('https://raw.githubusercontent.com/espaciospace/espaciospace.github.io/main/Background1.png?raw=true');
-    background-size: cover; /* Cover the entire image */
+    width: 80vw; /* Width of the image container */
+    height: 80vh; /* Height of the image container */
+    position: absolute; /* Position the image container absolutely */
+    top: 50%; /* Align to the vertical center */
+    left: 50%; /* Align to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the image container */
+    background-size: cover; /* Cover the entire image container */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
-    z-index: -1; /* Place it behind other elements */
   }
-
   .second-image {
     position: absolute; /* Position the image absolutely */
     top: 15vh; /* Align to 15% from the top */

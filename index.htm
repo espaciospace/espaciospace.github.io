@@ -36,14 +36,16 @@
   }
   
   .additional-image {
-    position: absolute; /* Position the image absolutely within the container */
-    height: auto; /* Maintain aspect ratio */
-    transition: transform 0.3s ease; /* Smooth transition for transform property */
-  }
+  position: absolute; /* Position the image absolutely within the container */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for transform property */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* White glow with 0.4 transparency */
+}
 
-  .additional-image:hover {
-    transform: scale(1.2); /* Scale up by 20% on hover */
-  }
+.additional-image:hover {
+  transform: scale(1.2); /* Scale up by 20% on hover */
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.6); /* Increase glow on hover */
+}
 
   .jupiter {
     width: 250px; /* Jupiter width (adjusted to 250 pixels) */

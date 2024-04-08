@@ -72,6 +72,15 @@
     max-width: 30%; /* Set max-width for the image */
     height: auto; /* Maintain aspect ratio */
   }
+  .overlay {
+    position: absolute;
+    top: calc(10px + 20px); /* Just below the Go Back button */
+    left: 0;
+    width: 100%;
+    height: calc(60px - 20px); /* Just above the Pluto text */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    z-index: 0; /* Ensure the overlay is behind other elements */
+  }
 </style>
 </head>
 <body>
@@ -80,7 +89,8 @@
     <a href="index.html" class="go-back-text"> Go Back </a>
     <div class="pluto-text">Pluto</div>
     <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/viber_image_2024-04-08_21-58-00-790.jpg?raw=true" alt="Left Image" class="left-image">
-    </div>
+    <div class="overlay"></div>
+    <div>
 
 </body>
 </html>

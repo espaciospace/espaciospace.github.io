@@ -10,7 +10,17 @@
     padding: 0;
     height: 100%;
     overflow-x: hidden; /* Hide horizontal scrollbar */
-    background: #f0f0f0; /* Fallback color if the image is unavailable */
+    background: black; /* Set initial background color to black */
+    animation: fadeInBackground 2s forwards; /* Fade-in animation */
+  }
+
+  @keyframes fadeInBackground {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   
   .container {

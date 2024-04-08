@@ -3,46 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fading Background</title>
+<title>Espacio</title>
 <style>
   body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: black;
-    transition: background 3s ease; /* Transition effect for background */
+    height: 100%;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    background: black; /* Set initial background color to black */
+    animation: fadeInBackground 3s forwards; /* Fade-in animation */
   }
 
-  .content {
-    position: absolute;
-    z-index: -1;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 3s ease; /* Transition effect for opacity */
+  @keyframes fadeInBackground {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
-
-  body.fadeIn {
-    background: url("https://github.com/espaciospace/espaciospace.github.io/blob/main/STARS.png?raw=true") center/cover no-repeat;
+  
+  .container {
+    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/STARS.png?raw=true');
+    width: 1920px; /* Width of the container */
+    height: 1280px; /* Height of the container */
+    
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    position: relative; /* Set position to relative for absolute positioning of child elements */
+    overflow-y: auto; /* Enable vertical scrollbar */
+    overflow-x: hidden;
   }
-
-  body.fadeIn .content {
-    opacity: 1; /* Fade in content when background is loaded */
-  }
-</style>
-</head>
-<body>
-<div class="content">
-  <!-- Your content goes here -->
-  <h1>Hello, world!</h1>
-</div>
-
-<script>
-  // Add class to body once the page is loaded
-  document.addEventListener("DOMContentLoaded", function() {
-    document.body.classList.add('fadeIn');
-  });
-</script>
-</body>
-</html>

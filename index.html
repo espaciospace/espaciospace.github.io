@@ -162,23 +162,23 @@
 }
 
 .saturn-name {
-  left: 987px;
-  top: 227px;
+  left: 875px;
+  top: 287px;
 }
 
 .uranus-name {
-  left: 970px;
-  top: 610px;
+  left: 865px;
+  top: 660px;
 }
 
 .neptune-name {
-  left: 1215px;
-  top: 344px;
+  left: 1180px;
+  top: 394px;
 }
 
 .pluto-name {
-  left: 987px;
-  top: 1000px;
+  left: 939px;
+  top: 1040px;
 }
 
 /* Show planet names on hover */
@@ -207,15 +207,22 @@
   <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Venus.png?raw=true" class="additional-image venus" alt="Venus Image">
   <div class="planet-name venus-name">Venus</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Saturn.png?raw=true" class="additional-image saturn" alt="Saturn Image">
-  <div class="planet-name saturn-name">Saturn</div>
+  <a href="Saturn.html" class="saturn-link" style="text-decoration: none;">
+    <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Saturn.png?raw=true" class="additional-image saturn" alt="Saturn Image">
+    <div class="planet-name saturn-name">Saturn</div>
+  </a>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Uranus.png?raw=true" class="additional-image uranus" alt="Uranus Image">
-  <div class="planet-name uranus-name">Uranus</div>
+  <a href="Uranus.html" class="uranus-link" style="text-decoration: none;">
+    <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Uranus.png?raw=true" class="additional-image uranus" alt="Uranus Image">
+    <div class="planet-name uranus-name">Uranus</div>
+  </a>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Neptune.png?raw=true" class="additional-image neptune" alt="Neptune Image">
-  <div class="planet-name neptune-name">Neptune</div>
-  <a href="Pluto.html" style="text-decoration: none;">
+  <a href="Neptune.html" class="neptune-link" style="text-decoration: none;">
+    <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Neptune.png?raw=true" class="additional-image neptune" alt="Neptune Image">
+    <div class="planet-name neptune-name">Neptune</div>
+  </a>
+  
+  <a href="Pluto.html" class="pluto-link" style="text-decoration: none;">
     <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Pluto.png?raw=true" class="additional-image pluto" alt="Pluto Image">
     <div class="planet-name pluto-name">Pluto</div>
   </a>
@@ -232,12 +239,69 @@
     }, 3000);
   }
 
+  // Function to handle navigation to Saturn
+  function navigateToSaturn() {
+    // Fade out the body
+    document.body.style.opacity = '0';
+    // Wait for 3 seconds before navigating
+    setTimeout(function() {
+      // Navigate to the new domain
+      window.location.href = "Saturn.html";
+    }, 3000);
+  }
+
+  // Function to handle navigation to Uranus
+  function navigateToUranus() {
+    // Fade out the body
+    document.body.style.opacity = '0';
+    // Wait for 3 seconds before navigating
+    setTimeout(function() {
+      // Navigate to the new domain
+      window.location.href = "Uranus.html";
+    }, 3000);
+  }
+
+  // Function to handle navigation to Neptune
+  function navigateToNeptune() {
+    // Fade out the body
+    document.body.style.opacity = '0';
+    // Wait for 3 seconds before navigating
+    setTimeout(function() {
+      // Navigate to the new domain
+      window.location.href = "Neptune.html";
+    }, 3000);
+  }
+
   // Add event listener to Pluto link
   document.querySelector('.pluto-link').addEventListener('click', function(event) {
     // Prevent default link behavior
     event.preventDefault();
     // Call function to navigate to Pluto
     navigateToPluto();
+  });
+
+  // Add event listener to Saturn link
+  document.querySelector('.saturn-link').addEventListener('click', function(event) {
+    // Prevent default link behavior
+    event.preventDefault();
+    // Call function to navigate to Saturn
+    navigateToSaturn();
+  });
+
+  // Add event listener to Uranus link
+  document.querySelector('.uranus-link').addEventListener('click', function(event) {
+    // Prevent default link behavior
+    event.preventDefault();
+    // Call function to navigate to Uranus
+    navigateToUranus();
+  });
+
+  // Add event listener to Neptune link
+  document.querySelector('.neptune-link').addEventListener('click', function(event) {
+    // Prevent default link behavior
+    event.preventDefault();
+    // Call function to navigate to Neptune
+    navigateToNeptune();
   });
 </script>
 <script>

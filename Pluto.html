@@ -5,31 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+      background: black; /* Set initial background color to black */
+      animation: fadeInBackground 3s forwards; /* Fade-in animation */
+    }
+
+    @keyframes fadeInBackground {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .w3-top {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000; /* Ensure top bar stays on top */
+      background-color: transparent;
+    }
+
+
     .w3-container {
       background-color: white;
       background-size: cover;
       background-repeat: no-repeat;
       height: 150vh;
       position: relative; /* Add position relative to set absolute positioning */
+      padding-top: 50px; /* Add padding for the fixed top bar */
     }
+
     .background-image {
       position: absolute;
-      top: 350px; /* 20 pixels away from the top */
-      left: 300px; /* 5 pixels away from the left */
+      top: 550px; /* 20 pixels away from the top */
+      left: 320px; /* 5 pixels away from the left */
       z-index: 1; /* Ensure the image stays behind other elements */
       width: 200px; /* Adjust width as needed */
-      transform: scale(3);
-      box-shadow: 0 0 20px 10px rgba(200, 200, 200, 1);
+      transform: scale(4);
     }
+
+    @font-face {
+      font-family: 'Roboto Bold';
+      src: url('https://github.com/espaciospace/espaciospace.github.io/raw/main/Roboto-Bold.ttf') format('truetype');
+    }
+
     .burger-text {
       display: inline-block;
       vertical-align: middle;
       margin-left: 10px;
       color: black;
-      font-size: 30px; /* Adjust the font size as needed */
-      font-weight: bold; /* Make the text bold */
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      font-size: 60px;
+      font-weight: bold;
+      font-family: 'Roboto Bold', sans-serif;
     }
+
+
+    /* Style for the "Pluto-Dress" text */
+    @font-face {
+      font-family: 'Roboto Medium';
+      src: url('https://github.com/espaciospace/espaciospace.github.io/raw/main/Roboto-Medium.ttf') format('truetype');
+    }
+
+    .pluto-dress {
+      position: absolute;
+      top: 145px;
+      right: 500px;
+      z-index: 2;
+      color: black;
+      font-size: 30px;
+      font-weight: bold; /* Use 'medium' font weight */
+      font-family: 'Roboto Medium', sans-serif; /* Use the defined font */
+    }
+
+    /* Style for the "Price" text */
+    .price {
+      position: absolute;
+      top: 200px; /* Adjust position from the top */
+      right: 690px; /* Adjust position from the left */
+      z-index: 2; /* Ensure the price stays above other elements */
+      color: black; /* Black text color */
+      font-size: 25px; /* Adjust font size as needed */
+      font-weight: bold;
+      font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
+    }
+
+    /* Style for the line */
+    .line {
+      position: absolute;
+      top: 240px; /* Adjust position from the top */
+      left: 835px; /* Adjust position from the left */
+      width: 800px; /* Set width of the line */
+      height: 2px; /* Set height of the line */
+      background-color: grey; /* Set color of the line */
+      z-index: 2; /* Ensure the line stays above other elements */
+    }
+
+    /* Style for the "Add to Cart" button */
+    .add-to-cart-button {
+      position: absolute;
+      top: 300px; /* Adjust position from the top */
+      right: 335px; /* Adjust position from the left */
+      z-index: 2; /* Ensure the button stays above other elements */
+      font-size: 15px; /* Adjust font size as needed */
+      font-weight: bold; /* Make the text bold */
+      font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
+      background-color: #333; /* Darker black background color */
+      color: white; /* White text color */
+      border: none; /* Remove border */
+      padding: 13px 200px; /* Add padding */
+      text-align: center; /* Center-align text */
+      text-decoration: none; /* Remove underline */
+      cursor: pointer; /* Add pointer cursor on hover */
+      transition: background-color 0.3s; /* Smooth transition on hover */
+    }
+
+    .add-to-cart-button:hover {
+      background-color: #444; /* Slightly brighter black on hover */
+    }
+
     /* Style for the overlay */
     .overlay {
       position: fixed;
@@ -37,45 +134,143 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(63, 59, 59, 0.5); /* Semi-transparent grey */
-      z-index: 998; /* Ensure it's below the sidebar */
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      z-index: 1001; /* Ensure it's above the top bar */
       display: none; /* Initially hidden */
+      animation: fadeInOverlay 1s forwards; /* Fade-in animation */
+    }
+
+    @keyframes fadeInOverlay {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.5;
+      }
+    }
+
+    /* Style for the sidebar */
+    .w3-sidebar {
+      width: 400px; /* Adjust the width of the sidebar */
+      z-index: 1002; /* Ensure sidebar appears above overlay */
+    }
+
+    /* Style for the footer */
+    .footer {
+      position: absolute;
+      top: 1350px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background-color: rgb(43, 42, 42); /* Grey background color for the footer */
+      z-index: 1001; /* Ensure it's above other elements */
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center-align content horizontally */
+      padding: 0 20px;
+    }
+
+    .copyright-text {
+      font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
+      font-size: 14px; /* Adjust font size as needed */
+      color: white; /* White text color */
+    }
+
+    /* Style for the sidebar links */
+    .w3-bar-item {
+      font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
+      font-size: 25px; /* Adjust font size as needed */
+      font-weight: bold;
+      padding: 16px; /* Add padding */
+    }
+
+    /* Style for the sidebar close button */
+    .w3-large {
+      padding: 16px; /* Add padding */
+      font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
+      font-weight: bold;
+      font-size: 40x; /* Adjust font size as needed */
+    }
+
+    /* Style for the description text */
+    .description-text {
+      position: absolute;
+      top: 375px; /* Adjust position from the top */
+      right: 735px; /* Adjust position from the left */
+      color: black; /* Black text color */
+      font-size: 20px; /* Adjust font size as needed */
+      font-weight: bold;
+      font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
+    }
+
+    /* Style for the details text */
+    .details-text {
+      position: absolute;
+      top: 410px; /* Adjust position from the top */
+      left: 860px; /* Adjust position from the left */
+      color: black; /* Black text color */
+      font-size: 15px; /* Adjust font size as needed */
+      font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
+      display: block; /* Display as block */
+      height: 40px; /* Adjust height */
+      overflow: hidden; /* Hide overflow */
     }
   </style>
 </head>
 <body>
 
-<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none; z-index: 999;" id="mySidebar">
-  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button">Home</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+<div class="w3-top">
+  <div class="w3-white">
+    <button id="openNav" class="w3-button w3-white w3-xlarge">&#9776;</button>
+    <span class="burger-text">ESPACIO</span>
+  </div>
 </div>
 
-<div id="main">
-  <div class="w3-light-grey">
-    <button id="openNav" class="w3-button w3-light-grey w3-xlarge" onclick="w3_open()">&#9776;</button>
-    <span class="burger-text">Pluto</span>
-    <div class="w3-container">
-      <!-- Added the background image with the correct src -->
-      <img class="background-image" src="https://github.com/espaciospace/espaciospace.github.io/blob/main/viber_image_2024-04-08_21-58-00-790.jpg?raw=true" alt="Background Image">
-    </div>
-  </div>
+<div id="mySidebar" class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none;">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+  <a href="https://espaciospace.github.io/index.html" class="w3-bar-item w3-button">Home</a>
+</div>
+
+<div id="main" class="w3-container">
+  <!-- Added the background image with the correct src -->
+  <img class="background-image" src="https://github.com/espaciospace/espaciospace.github.io/blob/main/viber_image_2024-04-08_21-58-00-790.jpg?raw=true" alt="Background Image">
+  <!-- Added the text "Pluto Silver Dress" -->
+  <div class="pluto-dress">PLUTO SILVER DRESS</div>
+  <!-- Added the price -->
+  <div class="price">269.99 USD</div>
+  <!-- Added the line -->
+  <div class="line"></div>
+  <!-- Added the "Add to Cart" button -->
+  <button class="add-to-cart-button" onclick="addToCart()">Add to Cart</button>
+  <!-- Added the description text -->
+  <div class="description-text">DETAILS</div>
+  <!-- Added the details text -->
+  <div class="details-text">Radiant and sleek, this silver dress captures the essence of Pluto's icy beauty, gleaming under the distant sun, a celestial marvel for the fashion-forward explorer.</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <span class="copyright-text">©2024 espaciospace.github.io All rights reserved.</span>
 </div>
 
 <!-- Overlay element -->
 <div class="overlay" id="overlay"></div>
 
 <script>
-  function w3_open() {
+  document.getElementById("openNav").addEventListener("click", function() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("overlay").style.display = "block"; // Show overlay
-  }
+    document.body.style.overflowY = "hidden"; // Prevent vertical scrolling
+  });
+
   function w3_close() {
-    document.getElementById("main").style.marginLeft = "0%";
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("overlay").style.display = "none"; // Hide overlay
-    document.getElementById("openNav").style.display = "inline-block";
+    document.body.style.overflowY = "auto"; // Allow vertical scrolling
+  }
+  
+  function addToCart() {
+    // Add functionality to add item to cart
   }
 </script>
 

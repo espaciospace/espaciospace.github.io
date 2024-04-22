@@ -1,138 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pluto</title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-    background: black; /* Set initial background color to black */
-  }
-
-  @keyframes fadeInBackground {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .container {
-    width: 100vw; /* Width of the container */
-    height: 100vh; /* Height of the container */
-    animation: fadeInBackground 3s forwards; /* Fade-in animation */
-    background-image: url('https://raw.githubusercontent.com/espaciospace/espaciospace.github.io/main/STARS.png'), url('https://github.com/espaciospace/espaciospace.github.io/blob/main/Pluto.png?raw=true'); /* Background images */
-    background-size: cover, auto; /* Cover the entire container for the first image, auto for the second image */
-    background-position: center, center; /* Center the background images */
-    background-repeat: no-repeat, no-repeat; /* Do not repeat the background images */
-    position: relative; /* Set position to relative for absolute positioning of child elements */
-    overflow-y: auto; /* Enable vertical scrollbar */
-    overflow-x: hidden;
-  }
-  @font-face {
-  font-family: 'NeonFuture20Demo-L3jp3';
-  src: url('NeonFuture20Demo-L3jp3.woff2') format('woff2'), /* WOFF2 format */
-       url('NeonFuture20Demo-L3jp3.woff') format('woff'); /* WOFF format */
-  }
-  .pluto-image {
-    width: 20%; /* Scale the image by 2 */
-    position: absolute; /* Position the image absolutely */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the image */
-  }
-  
-  .go-back-text {
-    position: absolute;
-    top: 20px; /* 10px from the top */
-    left: 20px; /* 10px from the left */
-    font-family: 'NeonFuture20Demo-L3jp3', sans-serif; /* Specify the font family */
-    font-size: 40px; /* Font size */
-    color: white; /* Text color */
-  }
-  .pluto-text {
-    position: absolute;
-    top: 60px; /* 10px from the top */
-    left: 50%; /* Center horizontally */
-    font-family: 'NeonFuture20Demo-L3jp3', sans-serif; /* Specify the font family */
-    font-size: 60px; /* Font size */
-    color: white; /* Text color */
-    transform: translateX(-50%); /* Center the text horizontally */
-    z-index: 1;
-  }
-  .left-image {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 5%; /* 5% from the left */
-    transform: translateY(-50%); /* Center the image vertically */
-    max-width: 30%; /* Set max-width for the image */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 1;
-  }
-  .overlay {
-    position: absolute;
-    top: 70px; /* Just below the Go Back button */
-    left: 0;
-    width: 100%;
-    height: calc(50% + 330px); /* Just below the Pluto text */
-    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
-    z-index: 0; /* Ensure the overlay is behind other elements */
-  }
-  .price-text {
-    position: absolute;
-    top: 160px; /* Adjust to your desired position */
-    right: 265px; /* Adjust to your desired position */
-    font-family: 'NeonFuture20Demo-L3jp3', sans-serif; /* Specify the font family */
-    font-size: 80px; /* Adjust to your desired font size */
-    color: white; /* Text color */
-    z-index: 1; /* Ensure the text is above the black rectangle */
-  }
-  .price-number {
-    position: absolute;
-    top: 280px; /* Adjust to your desired position */
-    right: 250px; /* Adjust to your desired position */
-    font-family: 'NeonFuture20Demo-L3jp3', sans-serif; /* Specify the font family */
-    font-size: 80px; /* Adjust to your desired font size */
-    color: white; /* Text color */
-    z-index: 1; /* Ensure the text is above the black rectangle */
-  }
-  .add-to-cart-text {
-    position: absolute;
-    top: 430px; /* Adjust to your desired position */
-    right: 250px; /* Adjust to your desired position */
-    font-family: 'NeonFuture20Demo-L3jp3', sans-serif; /* Specify the font family */
-    font-size: 40px; /* Adjust to your desired font size */
-    color: white; /* Text color */
-    z-index: 1; /* Ensure the text is above the black rectangle */
-  }
-  .description-text {
-    position: absolute;
-    top: 600px; /* Adjust to your desired position */
-    right: 200px; /* Adjust to your desired position */
-    font-family: 'NeonFuture20Demo-L3jp3', sans-serif; /* Specify the font family */
-    font-size: 100px; /* Adjust to your desired font size */
-    color: white; /* Text color */
-    z-index: 1; /* Ensure the text is above the black rectangle */
-  }
-</style>
-</head>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-<div class="container">
-    <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Pluto.png?raw=true" alt="Pluto" class="pluto-image">
-    <a href="index.html" class="go-back-text"> Go Back </a>
-    <div class="pluto-text">Pluto</div>
-    <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/viber_image_2024-04-08_21-58-00-790.jpg?raw=true" alt="Left Image" class="left-image">
-    <div class="overlay"></div>
-    <div class="price-text">Price</div>
-    <div class="price-number">OOOO</div>
-    <div class="add-to-cart-text">Add to Cart</div>
-    <div class="description-text">Description</div>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large"
+  onclick="w3_close()">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
 </div>
+
+<div id="main">
+
+<div class="w3-teal">
+  <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>My Page</h1>
+  </div>
+</div>
+
+<img src="img_car.jpg" alt="Car" style="width:100%">
+
+<div class="w3-container">
+<p>In this example, the sidebar is hidden (style="display:none")</p>
+<p>It is shown when you click on the menu icon in the top left corner.</p>
+<p>When it is opened, it shifts the page content to the right.</p>
+<p>We use JavaScript to add a 25% left margin to the div element with id="main" when this happens. The value "25%" matches the width of the sidebar.</p>
+</div>
+
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
 
 </body>
 </html>

@@ -24,7 +24,7 @@
   }
   
   .container {
-    background-image: url('https://github.com/espaciospace/espaciospace.github.io/blob/main/3398655-aj.png?raw=true');
+    background-image: url('background.png');
     width: 1920px; /* Width of the container */
     height: 1280px; /* Height of the container */
     
@@ -191,119 +191,42 @@
 
 <div class="container">
   <!-- Content goes here -->
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Espacio%20(1).png?raw=true" class="title" alt="Title Image">
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Jupiter.png?raw=true" class="additional-image jupiter" alt="Jupiter Image">
+  <img src="/Espacio.png" class="title" alt="Title Image">
+  <img src="slikep/Jupiter.png" class="additional-image jupiter" alt="Jupiter Image">
   <div class="planet-name jupiter-name">Jupiter</div>
   
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Earth.png?raw=true" class="additional-image earth" alt="Earth Image">
+  <img src="slikep/Earth.png" class="additional-image earth" alt="Earth Image">
   <div class="planet-name earth-name">Earth</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Mars.png?raw=true" class="additional-image mars" alt="Mars Image">
+  <img src="slikep/Mars.png" class="additional-image mars" alt="Mars Image">
   <div class="planet-name mars-name">Mars</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Mercury.png?raw=true" class="additional-image mercury" alt="Mercury Image">
+  <img src="slikep/Mercury.png" class="additional-image mercury" alt="Mercury Image">
   <div class="planet-name mercury-name">Mercury</div>
 
-  <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Venus.png?raw=true" class="additional-image venus" alt="Venus Image">
+  <img src="slikep/Venus.png" class="additional-image venus" alt="Venus Image">
   <div class="planet-name venus-name">Venus</div>
 
-  <a href="Saturn.html" class="saturn-link" style="text-decoration: none;">
-    <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Saturn.png?raw=true" class="additional-image saturn" alt="Saturn Image">
+  <a href="planet/Saturn.html" class="saturn-link" style="text-decoration: none;">
+    <img src="slikep/Saturn.png" class="additional-image saturn" alt="Saturn Image">
     <div class="planet-name saturn-name">Saturn</div>
   </a>
 
-  <a href="Uranus.html" class="uranus-link" style="text-decoration: none;">
-    <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Uranus.png?raw=true" class="additional-image uranus" alt="Uranus Image">
+  <a href="planet/Uranus.html" class="uranus-link" style="text-decoration: none;">
+    <img src="slikep/Uranus.png" class="additional-image uranus" alt="Uranus Image">
     <div class="planet-name uranus-name">Uranus</div>
   </a>
 
-  <a href="Neptune.html" class="neptune-link" style="text-decoration: none;">
-    <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Neptune.png?raw=true" class="additional-image neptune" alt="Neptune Image">
+  <a href="planet/Neptune.html" class="neptune-link" style="text-decoration: none;">
+    <img src="/slikep/Neptune.png" class="additional-image neptune" alt="Neptune Image">
     <div class="planet-name neptune-name">Neptune</div>
   </a>
   
-  <a href="Pluto.html" class="pluto-link" style="text-decoration: none;">
-    <img src="https://github.com/espaciospace/espaciospace.github.io/blob/main/Pluto.png?raw=true" class="additional-image pluto" alt="Pluto Image">
+  <a href="planet/Pluto.html" class="pluto-link" style="text-decoration: none;">
+    <img src="/slikep/Pluto.png" class="additional-image pluto" alt="Pluto Image">
     <div class="planet-name pluto-name">Pluto</div>
   </a>
 </div>
-<script>
-  // Function to handle navigation to Pluto
-  function navigateToPluto() {
-    // Fade out the body
-    document.body.style.opacity = '0';
-    // Wait for 3 seconds before navigating
-    setTimeout(function() {
-      // Navigate to the new domain
-      window.location.href = "Pluto.html";
-    }, 3000);
-  }
-
-  // Function to handle navigation to Saturn
-  function navigateToSaturn() {
-    // Fade out the body
-    document.body.style.opacity = '0';
-    // Wait for 3 seconds before navigating
-    setTimeout(function() {
-      // Navigate to the new domain
-      window.location.href = "Saturn.html";
-    }, 3000);
-  }
-
-  // Function to handle navigation to Uranus
-  function navigateToUranus() {
-    // Fade out the body
-    document.body.style.opacity = '0';
-    // Wait for 3 seconds before navigating
-    setTimeout(function() {
-      // Navigate to the new domain
-      window.location.href = "Uranus.html";
-    }, 3000);
-  }
-
-  // Function to handle navigation to Neptune
-  function navigateToNeptune() {
-    // Fade out the body
-    document.body.style.opacity = '0';
-    // Wait for 3 seconds before navigating
-    setTimeout(function() {
-      // Navigate to the new domain
-      window.location.href = "Neptune.html";
-    }, 3000);
-  }
-
-  // Add event listener to Pluto link
-  document.querySelector('.pluto-link').addEventListener('click', function(event) {
-    // Prevent default link behavior
-    event.preventDefault();
-    // Call function to navigate to Pluto
-    navigateToPluto();
-  });
-
-  // Add event listener to Saturn link
-  document.querySelector('.saturn-link').addEventListener('click', function(event) {
-    // Prevent default link behavior
-    event.preventDefault();
-    // Call function to navigate to Saturn
-    navigateToSaturn();
-  });
-
-  // Add event listener to Uranus link
-  document.querySelector('.uranus-link').addEventListener('click', function(event) {
-    // Prevent default link behavior
-    event.preventDefault();
-    // Call function to navigate to Uranus
-    navigateToUranus();
-  });
-
-  // Add event listener to Neptune link
-  document.querySelector('.neptune-link').addEventListener('click', function(event) {
-    // Prevent default link behavior
-    event.preventDefault();
-    // Call function to navigate to Neptune
-    navigateToNeptune();
-  });
-</script>
 <script>
   // Store the scroll position in sessionStorage when the page is unloaded
   window.addEventListener('beforeunload', function() {

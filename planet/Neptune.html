@@ -99,20 +99,7 @@
       background-color: #444; /* Slightly brighter black on hover */
     }
 
-    /* Style for the overlay */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-      z-index: 1001; /* Ensure it's above the top bar */
-      display: none; /* Initially hidden */
-      animation: fadeInOverlay 1s forwards; /* Fade-in animation */
-    }
-
-  .menu {
+.menu {
     position: fixed;
     top: 0;
     left: -250px;
@@ -123,16 +110,48 @@
     z-index: 1000;
     overflow-y: auto;
 }
-    .menu-content {
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.menu-content {
     padding-top: 60px;
 }
-    .closebtn {
+
+.closebtn {
     position: absolute;
     top: 20px;
     right: 20px;
     color: #fff;
     cursor: pointer;
     font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    padding: 10px;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #ccc;
 }
 
     @keyframes fadeInOverlay {
@@ -145,19 +164,6 @@
     }
 
     /* Style for the footer */
-    .footer {
-      position: absolute;
-      top: 1350px;
-      left: 0;
-      width: 100%;
-      height: 50px;
-      background-color: rgb(43, 42, 42); /* Grey background color for the footer */
-      z-index: 1001; /* Ensure it's above other elements */
-      display: flex;
-      align-items: center;
-      justify-content: center; /* Center-align content horizontally */
-      padding: 0 20px;
-    }
 
     .copyright-text {
       font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */

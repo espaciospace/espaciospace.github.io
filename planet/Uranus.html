@@ -8,8 +8,8 @@
     body {
       margin: 0;
       padding: 0;
-      overflow-x: hidden; /* Hide horizontal scrollbar */
-      background: black; /* Set initial background color to black */
+      overflow-x: auto;
+      background: white; /* Set initial background color to black */
       animation: fadeInBackground 3s forwards; /* Fade-in animation */
     }
 
@@ -72,12 +72,13 @@
 
     .pluto-dress {
       position: absolute;
-      top: 145px;
-      right: 465px;
+      top: 145px; /* Adjust position from the top */
+      left: 860px; /* Adjust position from the left */
       z-index: 2;
       color: black;
       font-size: 30px;
       font-weight: bold; /* Use 'medium' font weight */
+      white-space: nowrap; 
       font-family: 'Roboto Medium', sans-serif; /* Use the defined font */
     }
 
@@ -85,10 +86,11 @@
     .price {
       position: absolute;
       top: 200px; /* Adjust position from the top */
-      right: 690px; /* Adjust position from the left */
+      left: 860px; /* Adjust position from the left */
       z-index: 2; /* Ensure the price stays above other elements */
       color: black; /* Black text color */
       font-size: 25px; /* Adjust font size as needed */
+      white-space: nowrap;
       font-weight: bold;
       font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
     }
@@ -98,7 +100,7 @@
       position: absolute;
       top: 240px; /* Adjust position from the top */
       left: 835px; /* Adjust position from the left */
-      width: 800px; /* Set width of the line */
+      width: 350px; /* Set width of the line */
       height: 2px; /* Set height of the line */
       background-color: grey; /* Set color of the line */
       z-index: 2; /* Ensure the line stays above other elements */
@@ -108,7 +110,7 @@
     .add-to-cart-button {
       position: absolute;
       top: 300px; /* Adjust position from the top */
-      right: 335px; /* Adjust position from the left */
+      left: 860px; /* Adjust position from the left */
       z-index: 2; /* Ensure the button stays above other elements */
       font-size: 15px; /* Adjust font size as needed */
       font-weight: bold; /* Make the text bold */
@@ -116,10 +118,11 @@
       background-color: #333; /* Darker black background color */
       color: white; /* White text color */
       border: none; /* Remove border */
-      padding: 13px 200px; /* Add padding */
+      padding: 13px 160px; /* Add padding */
       text-align: center; /* Center-align text */
       text-decoration: none; /* Remove underline */
       cursor: pointer; /* Add pointer cursor on hover */
+      white-space: nowrap;
       transition: background-color 0.3s; /* Smooth transition on hover */
     }
 
@@ -196,7 +199,7 @@
     .description-text {
       position: absolute;
       top: 375px; /* Adjust position from the top */
-      right: 735px; /* Adjust position from the left */
+      left: 860px; /* Adjust position from the left */
       color: black; /* Black text color */
       font-size: 20px; /* Adjust font size as needed */
       font-weight: bold;
@@ -213,7 +216,7 @@
       font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
       display: block; /* Display as block */
       height: 40px; /* Adjust height */
-      overflow: hidden; /* Hide overflow */
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -245,7 +248,12 @@
   <!-- Added the description text -->
   <div class="description-text">DETAILS</div>
   <!-- Added the details text -->
-  <div class="details-text">Radiant and sleek, this silver dress captures the essence of Pluto's icy beauty, gleaming under the distant sun, a celestial marvel for the fashion-forward explorer.</div>
+  <div class="details-text" style="padding:0;margin:0;">
+    <p>Radiant and sleek,</p>
+    <p>this silver dress captures the essence of Pluto's icy beauty,</p>
+    <p>gleaming under the distant sun,</p>
+    <p>a celestial marvel for the fashion-forward explorer.</p>
+  </div>
 </div>
 
 <!-- Footer -->
@@ -254,7 +262,7 @@
 </div>
 
 <!-- Overlay element -->
-<div class="overlay" id="overlay"></div>
+<div class="overlay" onclick="w3_close()" id="overlay"></div>
 
 <script>
   document.getElementById("openNav").addEventListener("click", function() {

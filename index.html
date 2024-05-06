@@ -9,9 +9,12 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow-x: scroll;
+    overflow-x: hidden;
     background: black; /* Set initial background color to black */
     animation: fadeInBackground 3s forwards; /* Fade-in animation */
+  }
+  @media screen and (max-width: 600px) {
+    overflow-x: scroll;
   }
 
   @keyframes fadeInBackground {

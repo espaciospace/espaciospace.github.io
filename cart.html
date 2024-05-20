@@ -284,8 +284,10 @@ function toggleDelivery() {
     const addressLabel = document.getElementById('addressLabel');
     const addDelivery = document.getElementById('addDelivery').checked;
     let total = parseFloat(document.getElementById('totalPrice').innerText);
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
     if (addDelivery) {
-        total += 30;
+        let deliveryFee = 30 * cart.length; // Calculate delivery fee based on the number of items
         addressLabel.style.display = 'block';
     } else {
         total -= 30;

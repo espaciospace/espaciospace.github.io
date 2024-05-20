@@ -6,11 +6,11 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <style>
     body {
-      margin: 0;
       padding: 0;
       overflow-x: auto;
       background: white; /* Set initial background color to black */
       animation: fadeInBackground 3s forwards; /* Fade-in animation */
+      margin-top: 90px;
     }
 
     @keyframes fadeInBackground {
@@ -124,6 +124,10 @@
       font-weight: bold;
       font-size: 40x; /* Adjust font size as needed */
     }
+    .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .cart-item button { margin-left: 10px; }
+        .checkout-form { display: none; margin-top: 20px; }
+        .checkout-form label { display: block; margin-bottom: 10px; }
     </style>
 </head>
 <body>

@@ -224,7 +224,7 @@
     background-color: #d4edda;
     color: #155724;
     z-index:2000;
-    width: 400px;
+    width: 500px;
     padding: 10px;
     top: 40px; /* Adjusted to be 20px above the add to cart button */
     border: 1px solid #c3e6cb;
@@ -316,7 +316,7 @@
             // Display the success message
             const successMessage = document.getElementById('successMessage');
             const messageText = document.getElementById('messageText');
-            messageText.innerHTML = `Added ${item} for $${price}. <a href="cart.html">See cart</a>`;
+            messageText.innerHTML = `Added ${item} for $${price}. <a href="../cart.html">See cart</a>`;
             successMessage.style.display = 'block';
 
             // Automatically hide the message after 5 seconds

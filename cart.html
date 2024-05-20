@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+      background: white; /* Set initial background color to black */
+      animation: fadeInBackground 3s forwards; /* Fade-in animation */
+    }
+
+    @keyframes fadeInBackground {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .w3-top {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000; /* Ensure top bar stays on top */
+      background-color: transparent;
+    }
+
+
+    .w3-container {
+      background-color: white;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 150vh;
+      position: relative; /* Add position relative to set absolute positioning */
+      padding-top: 50px; /* Add padding for the fixed top bar */
+    }
+    @font-face {
+      font-family: 'Roboto Bold';
+      src: url('../Roboto-Bold.ttf') format('truetype');
+    }
+
+    .burger-text {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      color: black;
+      font-size: 60px;
+      font-weight: bold;
+      font-family: 'Roboto Bold', sans-serif;
+    }
+
+
+    /* Style for the "Pluto-Dress" text */
+    @font-face {
+      font-family: 'Roboto Medium';
+      src: url('../Roboto-Medium.ttf') format('truetype');
+    }
+
+    /* Style for the overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      z-index: 1001; /* Ensure it's above the top bar */
+      display: none; /* Initially hidden */
+      animation: fadeInOverlay 1s forwards; /* Fade-in animation */
+    }
+
+    @keyframes fadeInOverlay {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.5;
+      }
+    }
+
+    /* Style for the sidebar */
+    .w3-sidebar {
+      width: 400px; /* Adjust the width of the sidebar */
+      z-index: 1002; /* Ensure sidebar appears above overlay */
+    }
+
+    /* Style for the footer */
+    .footer {
+      position: absolute;
+      top: 1350px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background-color: rgb(43, 42, 42); /* Grey background color for the footer */
+      z-index: 1001; /* Ensure it's above other elements */
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center-align content horizontally */
+      padding: 0 20px;
+    }
+
+    .copyright-text {
+      font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
+      font-size: 14px; /* Adjust font size as needed */
+      color: white; /* White text color */
+    }
+
+    /* Style for the sidebar links */
+    .w3-bar-item {
+      font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
+      font-size: 25px; /* Adjust font size as needed */
+      font-weight: bold;
+      padding: 16px; /* Add padding */
+    }
+
+    /* Style for the sidebar close button */
+    .w3-large {
+      padding: 16px; /* Add padding */
+      font-family: 'Roboto Medium', sans-serif; /* Apply specified font family */
+      font-weight: bold;
+      font-size: 40x; /* Adjust font size as needed */
+    }
+    </style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-white">
+    <button id="openNav" class="w3-button w3-white w3-xlarge">&#9776;</button>
+    <span class="burger-text">ESPACIO</span>
+  </div>
+</div>
+
+<div id="mySidebar" class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none;">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+  <a href="../index.html" class="w3-bar-item w3-button">Home</a>
+</div>
+
+<a href="index.html"><h1>Your Cart</h1></a>
+    <div id="cartContents"></div>
+    <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+
+    <div id="checkoutForm" class="checkout-form">
+        <h2>Checkout</h2>
+        <label>
+            Name:
+            <input type="text" id="name" required>
+        </label>
+        <label>
+            Card Number:
+            <input type="text" id="cardNumber" required>
+        </label>
+        <label>
+            Address for Delivery:
+            <input type="text" id="address" required>
+        </label>
+        <p>Date: <span id="currentDate"></span></p>
+        <button onclick="completeCheckout()">Complete Checkout</button>
+    </div>
+
+<!-- Footer -->
+<div class="footer">
+  <span class="copyright-text">©2024 espaciospace.github.io All rights reserved.</span>
+</div>
+
+<!-- Overlay element -->
+<div class="overlay" onclick="w3_close()" id="overlay"></div>
+
+<script>
+  document.getElementById("openNav").addEventListener("click", function() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("overlay").style.display = "block"; // Show overlay
+    document.body.style.overflowY = "hidden"; // Prevent vertical scrolling
+  });
+
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("overlay").style.display = "none"; // Hide overlay
+    document.body.style.overflowY = "auto"; // Allow vertical scrolling
+  }
+  
+function displayCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartContents = document.getElementById('cartContents');
+            if (cart.length === 0) {
+                cartContents.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                let html = '<ul>';
+                cart.forEach((item, index) => {
+                    html += `<li class="cart-item">${item.item} - $${item.price} 
+                                <button onclick="removeFromCart(${index})">Remove</button></li>`;
+                });
+                html += '</ul>';
+                cartContents.innerHTML = html;
+            }
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        function proceedToCheckout() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert('Your cart is empty.');
+            } else {
+                document.getElementById('checkoutForm').style.display = 'block';
+                document.getElementById('cartContents').style.display = 'none';
+                const currentDate = new Date().toLocaleDateString();
+                document.getElementById('currentDate').innerText = currentDate;
+            }
+        }
+
+        function completeCheckout() {
+            alert('Checkout complete!');
+            // Clear the cart (for demo purposes)
+            localStorage.removeItem('cart');
+            document.getElementById('checkoutForm').style.display = 'none';
+            displayCart();
+        }
+
+</script>
+
+</body>
+</html>
